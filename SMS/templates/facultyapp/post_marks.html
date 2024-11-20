@@ -1,0 +1,31 @@
+{% extends 'Navbar/FacultyNavbar.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <h3>Post Marks</h3>
+      <form method="POST">
+        {% csrf_token %}
+        <div class="table-responsive">
+          <table class="table table-bordered">
+            {{ form.as_table }}
+          </table>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Post Marks</button>
+      </form>
+    </div>
+
+    <!-- Vertical Divider -->
+    <div class="col-auto d-none d-md-block">
+      <div class="border-left" style="height: 100vh;"></div>
+    </div>
+
+    <div class="col-md-5">
+      <!-- Additional content goes here if needed -->
+    </div>
+  </div>
+</div>
+
+{% endblock %}
